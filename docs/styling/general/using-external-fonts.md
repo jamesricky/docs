@@ -1,10 +1,12 @@
 # Using external fonts
 In Koala Framework 5.0 and later.
 
+If you want to create your own font-reposetory see [creating a custom font repository](create-font-repository.md).
+
 ## Using webfontloader
 #### 1. Add webfontloader to `composer.json`:
 
-```js
+```json
 "extra": {
     "require-npm": {
         "webfontloader": "^1.6.28"
@@ -30,9 +32,19 @@ $ret['assets']['files'][] = 'web/themes/Theme/Web.js';
 ```
 
 ## Using a font repository
-#### 1. Add your font repository to `composer.json`:
+#### 1. Add the font repository to your `composer.json`
 
-```js
+Require with npm (recommended):
+```json
+"extra": {
+    "require-npm": {
+        "myawesomefonts": "git+ssh://git@example.com:user/myawesomefonts.git#1.0.0"
+    }
+}
+```
+
+Or require with bower:
+```json
 "extra": {
     "require-bower": {
         "myawesomefonts": "git@example.com:user/myawesomefonts.git#1.0.0"
